@@ -9,7 +9,7 @@ final class ContactRepositoryTest extends TestCase
 {
     private $repository;
 
-    private $pdo;
+    public $pdo;
 
     protected function setUp(): void
     {
@@ -22,8 +22,8 @@ final class ContactRepositoryTest extends TestCase
             lastname       VARCHAR( 50 ),
             birthday  DATETIME
         );");
-        $this->repository = new ContactRepository($pdo);
-        
+        $this->repository = new ContactRepository($this->pdo);
+
 
     }
 
